@@ -124,6 +124,41 @@ Question 5.
 // 7. Iterate over the array and have them print talk.
 </pre> 
 
+protocol Communication {
+var message: String { get }
+}
+​
+​class Dog: Communication {
+​var message: String { return "woof woof" }
+​// let message = "woof woof"
+​var fur = true
+​}
+​
+​class Cat: Communication {
+​var message: String { return "meow" }
+​var shitsInSand = true
+​}
+​
+​class Cow: Communication {
+​var message: String { return "moo" }
+​var makesMilk = true
+​}
+​
+​let b = Cow()
+​let c = Cat()
+​let d = Dog()
+​let array: [Communication] = [b,c,d]
+​for a in array {
+
+​print(a)
+​print(a.message)
+
+​if let _ = a as? Cow {
+​print("it's a cow. holy cow")
+​}
+​}
+
+
 
 Question 6
 
